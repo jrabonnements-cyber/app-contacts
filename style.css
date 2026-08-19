@@ -1,25 +1,70 @@
-* { box-sizing: border-box; font-family: -apple-system, Arial, sans-serif; }
-body { margin: 0; background: #f4f5f7; color: #222; }
+:root {
+  --color-bg: #f7f9fb;
+  --color-accent: #2c5f8a;
+  --color-accent-soft: #e8f0f7;
+  --color-text: #1f2937;
+  --color-muted: #6b7280;
+  --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-base); }
+.hidden { display: none !important; }
+
+/* ===== ECRAN D'ACCUEIL ===== */
+#welcome-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.welcome-icon { margin-bottom: 24px; }
+
+.welcome-title {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.welcome-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-muted);
+  max-width: 280px;
+  line-height: 1.5;
+  margin: 12px 0 0 0;
+}
+
+.signin-wrap { margin-top: 44px; }
+
+/* ===== HEADER APP (apres connexion) ===== */
 header {
-  background: #2c5f8a; color: white; padding: 16px;
+  background: var(--color-accent); color: white; padding: 16px 20px;
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
 }
-header h1 { font-size: 20px; margin: 0; }
+header h1 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 0; }
 #user-info { display: flex; align-items: center; gap: 10px; color: white; font-size: 14px; }
-.hidden { display: none !important; }
+#logout-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 6px 12px; border-radius: 6px; font-size: 13px; }
 
 main { padding: 16px; max-width: 600px; margin: 0 auto; }
 #search-zone { display: flex; gap: 8px; margin-bottom: 16px; }
 #search-input { flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; }
-#add-btn { padding: 12px 16px; background: #2c5f8a; color: white; border: none; border-radius: 8px; font-size: 16px; }
+#add-btn { padding: 12px 16px; background: var(--color-accent); color: white; border: none; border-radius: 8px; font-size: 16px; }
 
 #contact-list { list-style: none; padding: 0; margin: 0; }
 #contact-list li {
   background: white; padding: 14px; margin-bottom: 8px; border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer;
 }
-#contact-list li .nom { font-weight: bold; font-size: 16px; }
-#contact-list li .details { font-size: 14px; color: #555; margin-top: 4px; }
+#contact-list li .nom { font-weight: 600; font-size: 16px; }
+#contact-list li .details { font-size: 14px; color: var(--color-muted); margin-top: 4px; }
 
 #modal {
   position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -29,11 +74,11 @@ main { padding: 16px; max-width: 600px; margin: 0 auto; }
   background: white; width: 100%; padding: 20px; border-radius: 16px 16px 0 0;
   max-height: 90vh; overflow-y: auto;
 }
-.modal-content label { display: block; margin-top: 12px; font-size: 14px; color: #555; }
+.modal-content label { display: block; margin-top: 12px; font-size: 14px; color: var(--color-muted); }
 .modal-content input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; margin-top: 4px; }
 .modal-actions { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
 .modal-actions button { flex: 1; padding: 12px; border: none; border-radius: 8px; font-size: 15px; }
-#save-btn { background: #2c5f8a; color: white; }
+#save-btn { background: var(--color-accent); color: white; }
 #delete-btn.danger { background: #c0392b; color: white; }
 #cancel-btn { background: #eee; }
 .error { color: #c0392b; font-size: 14px; margin-top: 10px; }
