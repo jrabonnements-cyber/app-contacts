@@ -24,7 +24,8 @@ function handleCredentialResponse(response) {
   const payload = JSON.parse(atob(response.credential.split('.')[1]));
   currentEmail = payload.email;
 
-  document.getElementById('g_id_signin').classList.add('hidden');
+  document.getElementById('welcome-screen').classList.add('hidden');
+  document.getElementById('app-header').classList.remove('hidden');
   document.getElementById('user-info').classList.remove('hidden');
   document.getElementById('user-email').textContent = currentEmail;
   document.getElementById('app').classList.remove('hidden');
