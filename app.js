@@ -36,7 +36,10 @@ function handleCredentialResponse(response) {
 document.getElementById('logout-btn').addEventListener('click', () => {
   currentIdToken = null;
   currentEmail = null;
-  document.getElementById('g_id_signin').classList.remove('hidden');
+  currentIdToken = null;
+  currentEmail = null;
+  document.getElementById('welcome-screen').classList.remove('hidden');
+  document.getElementById('app-header').classList.add('hidden');
   document.getElementById('user-info').classList.add('hidden');
   document.getElementById('app').classList.add('hidden');
 });
